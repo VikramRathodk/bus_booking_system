@@ -1,0 +1,70 @@
+<div class="search-container">
+    <div class="row">
+        <select [(ngModel)]="selectedStateId" (change)="onStateChange(selectedStateId)">
+            <option value="-1" disabled selected>Select State</option>
+            @for (item of locationState$| async; track $index) {
+            <option [value]="item.stateId">{{item.stateName}}</option>
+            }
+
+        </select>
+    </div>
+
+    <div class="row">
+        <!-- From location city -->
+        <div class="col">
+            <select name="fromLocation" [(ngModel)]="searchObject.fromLocation" [ngModelOptions]="{standalone: true}">
+                <option value="-1" disabled selected>From</option>
+                @for (item of cities$| async; track $index) {
+                <option [value]="item.cityId">{{item.cityName}}</option>
+
+                }
+
+            </select>
+        </div>
+
+        <!-- To location city -->
+        <div class="col">
+            <select name="toLocation" [(ngModel)]="searchObject.toLocation" [ngModelOptions]="{standalone: true}">
+                <option value="-1" disabled selected>To</option>
+                @for (item of cities$| async; track $index) {
+                <option [value]="item.cityId">{{item.cityName}}</option>
+                }
+            
+            </select>
+        </div>
+
+        <!-- Date picker -->
+        <div class="col" >
+            <input placeholder="Date" name="travelDate"  [(ngModel)]="searchObject.travelDate" [ngModelOptions]="{standalone: true}" type="date" />
+        </div>
+
+        <!-- Search button -->
+        <div class="col">
+            <button (click)="searchBus()">Search</button>
+        </div>
+
+       
+    </div>
+     <!-- Bus list -->
+     <div class="second_row">
+        <ul>
+            @for (bus of searchBus$| async; track $index) {
+                <li>
+                    <div class="bus">
+                        <div class="bus-name">{{ bus.busName }}</div>
+                        <div class="bus-details">
+                            <div class="bus-details-item">Source: {{ bus.fromCityName }}</div>
+                            <div class="bus-details-item">Destination: {{ bus.toCityName }}</div>
+                            <div class="bus-details-item">Date: {{ bus.travelDate }}</div>
+                            <div class="bus-details-item">Departure Time: {{ bus.departureTime }}</div>
+                            <div class="bus-details-item">Arrival Time: {{ bus.arrivalTime }}</div>
+                            <div class="bus-details-item">Fare: {{ bus.fare }}</div>
+                            <div class="bus-details-item">Seats Available: {{ bus.seatsAvailable }}</div>
+                            <div class="bus-details-item">Bus Type: {{ bus.busType }}</div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
