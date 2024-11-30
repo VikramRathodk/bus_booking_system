@@ -1,0 +1,22 @@
+<div class="auth-container">
+    <div class="form-section login-section" [class.active]="activeSection === 'login'">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email"  [(ngModel)]="loginEmail"/>
+      <input type="password"   placeholder="Password" [(ngModel)]="loginPassword"/>
+    
+      <button class="auth-btn" (click)="login()">Login</button>
+      <p>Don't have an account? <span (click)="setActiveSection('registration')" class="switch-link">Register</span></p>
+     
+    </div>
+  
+    <div class="form-section registration-section" [class.active]="activeSection === 'registration'">
+      <h2>Register</h2>
+      <input type="text" [(ngModel)]="firstName" placeholder="First Name" />
+      <input type="text" [(ngModel)]="lastName"  placeholder="Last Name" />
+      <input type="email"  [(ngModel)]="email" placeholder="Email" />
+      <input type="password"  [(ngModel)]="password"placeholder="Password" />
+      <button class="auth-btn" (click)="register()">Register</button>
+      <p>Already have an account? <span (click)="setActiveSection('login')" class="switch-link">Login</span></p>
+    </div>
+  </div>
+  

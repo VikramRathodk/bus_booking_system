@@ -1,0 +1,108 @@
+/* General Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Heading and Button Styling */
+  h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Input Fields */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Auth Button */
+  .auth-btn {
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .auth-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Social Login Buttons */
+  .social-login button {
+    width: 45%;
+    padding: 12px;
+    margin: 10px 2.5%;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-login button:hover {
+    background-color: #ddd;
+    transform: translateY(-3px);
+  }
+  
+  /* Section Transition */
+  .form-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .form-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Switch Link */
+  .switch-link {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .switch-link:hover {
+    color: #0056b3;
+  }
+  
+
+  
+  /* Styling for icons in social buttons */
+  .fab {
+    margin-right: 5px;
+  }
+  
